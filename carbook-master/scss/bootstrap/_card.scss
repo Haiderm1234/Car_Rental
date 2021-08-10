@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+  min-width: 0;
   word-wrap: break-word;
   background-color: $card-bg;
   background-clip: border-box;
@@ -62,10 +62,6 @@
   }
 }
 
-//
-// Optional textual caps
-//
-
 .card-header {
   padding: $card-spacer-y $card-spacer-x;
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
@@ -74,7 +70,9 @@
   border-bottom: $card-border-width solid $card-border-color;
 
   &:first-child {
-    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+    @include border-radius(
+      $card-inner-border-radius $card-inner-border-radius 0 0
+    );
   }
 
   + .list-group {
@@ -90,14 +88,11 @@
   border-top: $card-border-width solid $card-border-color;
 
   &:last-child {
-    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+    @include border-radius(
+      0 0 $card-inner-border-radius $card-inner-border-radius
+    );
   }
 }
-
-
-//
-// Header navs
-//
 
 .card-header-tabs {
   margin-right: -$card-spacer-x / 2;
@@ -122,21 +117,20 @@
 }
 
 .card-img {
-  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  width: 100%; // Required because we use flexbox and this applies align-self: stretch
   @include border-radius($card-inner-border-radius);
 }
 
 // Card image caps
 .card-img-top {
-  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  width: 100%; // Required because we use flexbox and this applies align-self: stretch
   @include border-top-radius($card-inner-border-radius);
 }
 
 .card-img-bottom {
-  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  width: 100%; // Required because we use flexbox and this applies align-self: stretch
   @include border-bottom-radius($card-inner-border-radius);
 }
-
 
 // Card deck
 
@@ -155,7 +149,6 @@
 
     .card {
       display: flex;
-      // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
       flex: 1 0 0%;
       flex-direction: column;
       margin-right: $card-deck-margin;
@@ -164,11 +157,6 @@
     }
   }
 }
-
-
-//
-// Card groups
-//
 
 .card-group {
   display: flex;
@@ -185,7 +173,6 @@
     // The child selector allows nested `.card` within `.card-group`
     // to display properly.
     > .card {
-      // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
       flex: 1 0 0%;
       margin-bottom: 0;
 
@@ -230,7 +217,6 @@
   }
 }
 
-
 //
 // Columns
 //
@@ -252,7 +238,6 @@
     }
   }
 }
-
 
 //
 // Accordion
